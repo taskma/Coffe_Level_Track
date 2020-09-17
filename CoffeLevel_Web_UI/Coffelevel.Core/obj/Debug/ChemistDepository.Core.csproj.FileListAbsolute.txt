@@ -1,0 +1,4 @@
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\bin\Debug\PortfolioManager.Core.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\bin\Debug\PortfolioManager.Core.pdb
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\obj\Debug\PortfolioManager.Core.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\obj\Debug\PortfolioManager.Core.pdb

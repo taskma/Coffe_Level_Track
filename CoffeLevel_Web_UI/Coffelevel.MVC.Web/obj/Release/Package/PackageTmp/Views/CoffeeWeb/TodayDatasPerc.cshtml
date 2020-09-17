@@ -1,0 +1,169 @@
+﻿@using CoffeLevel.Data.Entities;
+
+@model CoffeLevel.Client.Web.Models.CoffeeWebModel
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TodayDatasPerc</title>
+</head>
+<body>
+    @if (Model.coffeeLevelList != null && Model.coffeeLevelList.Count() > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Zaman</th>
+                    <th>Sıcaklık </th>
+                    <th>Nem</th>
+                    <th>Ir0</th>
+                    <th>Ir1</th>
+                    <th>Ir2</th>
+                    <th>Ir3</th>
+                    <th>Ir4</th>
+                    <th>Ir0 Perc</th>
+                    <th>Ir1 Perc</th>
+                    <th>Ir2 Perc</th>
+                    <th>Ir3 Perc</th>
+                    <th>Ir4 Perc</th>
+                    <th>Level</th>
+                    <th>Cooking</th>
+                    <th>HasPot</th>
+                    <th>isBadAvarage</th>
+
+                </tr>
+            </thead>
+            @foreach (var item in Model.coffeeLevelList)
+            {
+                bool isAvarageList = false;
+                if (Model.avarageLevelList != null)
+                {
+                    foreach (var level in Model.avarageLevelList)
+                    {
+                        if (level.Id == item.Id)
+                        {
+                            isAvarageList = true;
+                            break;
+                        }
+                    }
+                }
+
+                CoffeeCalcLevelTable calcLevel = null;
+
+                if (Model.coffeeCalcLevelList != null)
+                {
+                    foreach (var levelItem in Model.coffeeCalcLevelList)
+                    {
+                        if (item.time >= levelItem.time.AddSeconds(-1) && item.time <= levelItem.time.AddSeconds(1))
+                        {
+                            calcLevel = levelItem;
+                            break;
+                        }
+                    }
+                }
+
+
+                string TrClass = item.ir2 < 400 ? "danger" : calcLevel != null && calcLevel.isBadAvarage ? "warning" : isAvarageList || calcLevel != null ? "success" :"";
+
+                <tr class="@TrClass">
+                    @{
+                        var perc0 = ((item.ir0 - Model.referanceTable.ir0) / (decimal)Model.referanceTable.ir0 * 100).ToString("0.#");
+                        var perc1 = ((item.ir1 - Model.referanceTable.ir1) / (decimal)Model.referanceTable.ir1 * 100).ToString("0.#");
+                        var perc2 = ((item.ir2 - Model.referanceTable.ir2) / (decimal)Model.referanceTable.ir2 * 100).ToString("0.#");
+                        var perc3 = ((item.ir3 - Model.referanceTable.ir3) / (decimal)Model.referanceTable.ir3 * 100).ToString("0.#");
+                        var perc4 = ((item.ir4 - Model.referanceTable.ir4) / (decimal)Model.referanceTable.ir4 * 100).ToString("0.#");
+                        if (Model.referanceTable.ir0 == 1)
+                        {
+                            perc0 = " - ";
+                            perc1 = " - ";
+                            perc2 = " - ";
+                            perc3 = " - ";
+                            perc4 = " - ";
+                        }
+
+                    }
+                    <td>
+                        @if (item.Id == Model.referanceTable.Id)
+                        {
+                            perc0 = perc0 + " (" + Model.referanceTable.ir0 + ")" ;
+                            perc1 = perc1 + " (" + Model.referanceTable.ir1 + ")";
+                            perc2 = perc2 + " (" + Model.referanceTable.ir2 + ")";
+                            perc3 = perc3 + " (" + Model.referanceTable.ir3 + ")";
+                            perc4 = perc4 + " (" + Model.referanceTable.ir4 + ")";
+                            <b><span class="text-red">@item.time</span> </b>
+                        }
+                        else
+                        {
+                            <span>@item.time</span> 
+                        }
+                    </td>
+                    <td>@item.temperature</td>
+                    <td>@item.humidity</td>
+                    <td>@item.ir0</td>
+                    <td>@item.ir1</td>
+                    <td>@item.ir2</td>
+                    <td>@item.ir3</td>
+                    <td>@item.ir4</td>
+                    <td>@perc0 </td>
+                    <td>@perc1 </td>
+                    <td>@perc2 </td>
+                    <td>@perc3 </td>
+                    <td>@perc4 </td>
+                    <td>
+                        @if (calcLevel != null)
+                        {
+                            <b><span class="text-red">@calcLevel.level</span> </b>
+                        }
+                        else
+                        {
+                            <span class="text-red"> - </span> 
+                        }
+                    </td>
+                    <td>
+                        @if (calcLevel != null)
+                        {
+                            <b><span class="text-red">@calcLevel.isCooking</span> </b>
+                        }
+                        else
+                        {
+                            <span class="text-red"> - </span>
+                        }
+                    </td>
+                    <td>
+                        @if (calcLevel != null)
+                        {
+                            <b><span class="text-red">@calcLevel.hasPot</span> </b>
+                        }
+                        else
+                        {
+                            <span class="text-red"> - </span>
+                        }
+                    </td>
+                    <td>
+                        @if (calcLevel != null)
+                        {
+                            <b><span class="text-red">@calcLevel.isBadAvarage</span> </b>
+                        }
+                        else
+                        {
+                            <span class="text-red"> - </span>
+                        }
+                    </td>
+
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            Kayıt bulunamadı.
+        </div>
+    }
+</body>
+</html>

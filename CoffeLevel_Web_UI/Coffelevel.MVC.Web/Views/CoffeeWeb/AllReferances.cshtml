@@ -1,0 +1,46 @@
+﻿
+
+
+@model CoffeLevel.Client.Web.Models.CoffeeWebModel
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllDatas</title>
+</head>
+<body>
+    @if (Model.referanceLevelList != null && Model.referanceLevelList.Count() > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Zaman</th>
+                    <th>levelId </th>
+                    <th style="text-align: right"></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.referanceLevelList)
+            {
+                <tr>
+                    <td>@item.time</td>
+                    <td>@item.levelId</td>
+                    <td>
+                        @Html.ActionLink("Seç", "RefDatas", "CoffeeWeb", new { inRef = item.levelId }, new { @class = "btn btn-info" })
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            Kayıt bulunamadı.
+        </div>
+    }
+</body>
+</html>

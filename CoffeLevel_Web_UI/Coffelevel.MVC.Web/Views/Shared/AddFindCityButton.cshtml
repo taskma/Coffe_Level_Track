@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "AddFindCityButton";
+}
+
+<script>
+    $(function () {
+
+        function getGeoLocation(mode) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                    // query city from Bing Maps API
+                    if (mode == 3) {
+                        alert('latitude: ' + pos.coords.latitude + ', longitude: ' + pos.coords.longitude);
+                    }
+                    else {
+                        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + pos.coords.latitude + ',' + pos.coords.longitude + '&sensor=true';
+                        //var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + '41.381736, 33.791774' + '&sensor=true';
+                        $.ajax({
+                            url: url,
+                            success: function (data) {
+                                if (mode == 1) {
+                                    var words = data.results[0].formatted_address.replace("/", ",").split(",");
+                                    var city = words[words.length - 2].replace(" Province", "").replace("Afyonkarahisar", "Afyon").replace(" İli", "");
+                                    $("#City").val(city);
+                                }
+                                else if (mode == 2) {
+                                    alert(data.results[0].formatted_address);
+                                }
+                            }
+                        });
+                    }
+
+                }, function () {
+                    alert("Konumunuz bulunamadı !");
+                });
+            } else {
+                alert("Kullandığınız browser GeoLocation API yi desteklemiyor ! ");
+            }
+        }
+
+
+        $("#btnFindLoc").click(function () {
+            ShowLoading();
+            getGeoLocation(1);
+        });
+
+        $("#btnShowCoordinate").click(function () {
+            getGeoLocation(3);
+        });
+        $("#btnShowAdress").click(function () {
+            getGeoLocation(2);
+        });
+        $("#btnShowMap").click(function () {
+            var url = '@Url.Action("ShowGoogleMap", "Home")';
+            window.location.href = url;
+        });
+        $("#btnShowWarning").click(function () {
+            alert(' Konum özelliklerini kullanabilmek için, tarayıcının konum bilgisi paylaşılsın mı? sorusuna, izin ver olarak cevap vermelisiniz.')
+        });
+
+        function ShowLoading() {
+            $("#spinnerLoadingWithoutBackground").show();
+            $("#spinnerLoadingWithoutBackground").fadeOut(2500);
+        }
+
+
+    });
+</script>
+
+<div id="spinnerLoadingWithoutBackground" style="display:none"></div>
+<div class="col-lg-4">
+    <div class="btn-group">
+        <button type="button" class="btn btn-success btn-sm" name="btnFindLoc" id="btnFindLoc"><< Konumum</button>
+        <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#" id="btnShowMap">Harita Üzerinde Göster</a></li>
+            <li><a href="#" id="btnShowCoordinate">Koordinatları Göster</a></li>
+            <li><a href="#" id="btnShowAdress">Adresimi Göster</a></li>
+            <li><a href="#" id="btnShowWarning">Uyarıyı Oku !</a></li>
+        </ul>
+    </div>
+</div>

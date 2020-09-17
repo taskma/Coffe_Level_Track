@@ -1,0 +1,11 @@
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\bin\Release\PortfolioManager.Biz.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\bin\Release\PortfolioManager.Biz.pdb
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\bin\Release\PortfolioManager.Core.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\bin\Release\PortfolioManager.Data.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\bin\Release\EntityFramework.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\bin\Release\PortfolioManager.Core.pdb
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\bin\Release\PortfolioManager.Data.pdb
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\bin\Release\EntityFramework.xml
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\obj\Release\ChemistDepository.Biz.csprojResolveAssemblyReference.cache
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\obj\Release\PortfolioManager.Biz.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Biz\obj\Release\PortfolioManager.Biz.pdb

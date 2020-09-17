@@ -1,0 +1,5 @@
+C:\Users\is96309\Source\Repos\CoffeLevelShow\ChemistDepository\ChemistDepository.Core\bin\Debug\PortfolioManager.Core.dll
+C:\Users\is96309\Source\Repos\CoffeLevelShow\ChemistDepository\ChemistDepository.Core\bin\Debug\PortfolioManager.Core.pdb
+C:\Users\is96309\Source\Repos\CoffeLevelShow\ChemistDepository\ChemistDepository.Core\obj\Debug\CoffeLevelShow.Core.csprojResolveAssemblyReference.cache
+C:\Users\is96309\Source\Repos\CoffeLevelShow\ChemistDepository\ChemistDepository.Core\obj\Debug\PortfolioManager.Core.dll
+C:\Users\is96309\Source\Repos\CoffeLevelShow\ChemistDepository\ChemistDepository.Core\obj\Debug\PortfolioManager.Core.pdb

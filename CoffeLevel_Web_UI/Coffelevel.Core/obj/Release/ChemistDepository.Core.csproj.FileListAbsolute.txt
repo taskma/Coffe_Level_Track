@@ -1,0 +1,5 @@
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\bin\Release\PortfolioManager.Core.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\bin\Release\PortfolioManager.Core.pdb
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\obj\Release\ChemistDepository.Core.csprojResolveAssemblyReference.cache
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\obj\Release\PortfolioManager.Core.dll
+C:\Users\is96309\VSprojects\Depo.Eczane\ChemistDepository\ChemistDepository.Core\obj\Release\PortfolioManager.Core.pdb

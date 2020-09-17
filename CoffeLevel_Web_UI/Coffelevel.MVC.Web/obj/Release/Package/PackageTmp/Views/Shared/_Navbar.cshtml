@@ -1,0 +1,50 @@
+﻿@using CoffeLevel.Client.Web.HelperMethods
+@*@Scripts.Render("~/bundles/jquery")*@
+<script>
+    $(document).ready(function () {
+        var str = location.href.toLowerCase();
+        $(".navbar-nav li a").each(function () {
+            if (str.indexOf(this.href.toLowerCase()) > -1) {
+                $("li.active").removeClass("active");
+                $(this).parent().addClass("active");
+            }
+        });
+    })
+</script>
+
+@*<style>
+ .topnavbar .navbar-nav > li > a {padding-top:2px !important; padding-bottom:2px !important;}
+ .navbar {min-height:30px !important}
+</style>
+
+<nav class="topnavbar navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Mesaj Gönder", "Index", "Depository", null, new { @class = "" })</li>
+                <li>@Html.ActionLink("Hakkında", "Index", "Depository", null, new { @class = "" })</li>
+            </ul>
+        </div>
+        </div>
+</nav>*@
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+            <img alt="Brand" src="~/Content/image/logoEsmall.png">
+        Eczane Sipariş Takibi </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        
+
+    </div>
+</nav>

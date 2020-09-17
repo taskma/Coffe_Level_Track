@@ -1,0 +1,18 @@
+﻿@using CoffeLevel.Client.Web.Infrastructure
+@using CoffeLevel.Client.Web.HelperMethods
+@model CoffeLevel.Client.Web.Models.SearchTimeModel
+
+
+<div class="text-right">
+
+   @Html.ActionLink("Sayfayı Kaydet (PDF) / Yazdır", "toPDF", @Html.GetControllerName(),
+                      new
+                      {
+                        actionName = Model.ActionName,
+                        FirstDate = Model.FirstDate.toDDMMYYYYString().Replace("/", "_"), 
+                        LastDate = Model.LastDate.toDDMMYYYYString().Replace("/", "_") 
+                      },
+                    new { @class = "btn btn-primary", target = "_blank" })
+   
+</div>
+

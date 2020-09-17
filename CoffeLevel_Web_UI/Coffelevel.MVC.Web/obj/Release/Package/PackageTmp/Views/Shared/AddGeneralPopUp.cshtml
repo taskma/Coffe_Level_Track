@@ -1,0 +1,88 @@
+﻿@using CoffeLevel.Client.Web.Infrastructure
+@model CoffeLevel.Client.Web.Models.PopUpModel
+
+
+
+<div id="UpdateModal" class="modal fade bs-example-modal-sm text-black" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    @if (Model.IsUpdates)
+                    {
+                        <span>  Güncelleme Geçmişi </span>
+                    }
+                    else
+                    {
+                        @Model.Header
+                    }   
+               
+                </h4>
+            </div>
+            <div class="modal-body">
+                @if (Model.IsUpdates)
+                {
+                    // Updates Here Start
+
+                    <u>07.01.2015</u>
+                    <ul>
+                        <li>Grafikli raporlara dairesel grafik eklenmiştir.</li>
+                    </ul>
+                    <u>25.12.2014</u>
+                    <ul>
+                        <li>'Grafikli Rapor' sayfalarındaki PDF kaydet ve Yazdır özelliği tüm tarayıcılarda, ekstra bir kurulum gerekmeden çalışır hale getirldi.</li>
+                    </ul>
+                    <u>12.12.2014</u>
+                    <ul>
+                        <li>Firma logosu eklenmiştir.</li>
+                    </ul>
+                    <u>28.11.2014</u>
+                    <ul>
+                        <li>Toplu mesaj gönderme eklenmiştir.</li>
+                    </ul>
+                    <u>26.11.2014</u>
+                    <ul>
+                        <li>Firma ayarlarına, depo şubelerine eposta gönderimini açıp kapama özelliği eklendi.</li>
+                        <li>Ayarlardan prim oranı tanımlanarak, 'Aylık Sipariş Raporu' sayfasında çalışan primleri gösterme özelliği eklendi.</li>
+                    </ul>
+                    <u>14.11.2014</u>
+                    <ul>
+                        <li>'Sistem Kullanım Raporu' sayfası eklendi. (Firma menüsü altında)</li>
+                    </ul>
+                    <u>12.11.2014</u>
+                    <ul>
+                        <li>'Aylık Sipariş Raporu'  sayfası eklendi. (Firma menüsü altında)</li>
+                    </ul>
+                    <u>06.11.2014</u>
+                    <ul>
+                        <li>'Siparişler' sayfasındaki ürün veya marka aramalarında, ilgili ürünün içinde olduğu siparişlerin listelenmesi özelliği eklendi.</li>
+                    </ul>
+                    <u>03.11.2014 </u><br />
+                    <ul>
+                        <li>Markalar - Ürünler sayafasına, ürün arama özelliği eklendi</li>
+                        <li>'Günlük Sipariş Raporu' sayfasına Firefox tarayıcı için sayfayı Kaydet ve Yazdır özelliği eklendi. </li>
+                    </ul>
+                    <u>28.10.2014 </u><br />
+                    <ul>
+                        <li>Şehir seçimlerine, konumumu bul özelliği eklendi.</li>
+                        <li>Konumumu bul özelliğine, harita üzerinde göster eklendi.  </li>
+                        <li>'Siparişler' sayfasında, ürün arama sonuçlarına MF toplam alanı eklendi.</li>
+                        <li>'Siparişler' sayfasında, eczane şehrine göre arama eklendi.</li>
+                    </ul>
+
+
+
+                    // Finish
+                }
+                else
+                {
+                    @Model.Body
+                }
+                
+                
+            </div>
+
+        </div>
+    </div>
+</div>

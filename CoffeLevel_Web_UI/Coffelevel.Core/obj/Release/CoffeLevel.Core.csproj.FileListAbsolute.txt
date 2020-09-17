@@ -1,0 +1,5 @@
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Core\bin\Release\Coffelevel.Core.dll
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Core\bin\Release\Coffelevel.Core.pdb
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Core\obj\Release\CoffeLevel.Core.csprojResolveAssemblyReference.cache
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Core\obj\Release\Coffelevel.Core.dll
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Core\obj\Release\Coffelevel.Core.pdb

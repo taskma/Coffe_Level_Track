@@ -1,0 +1,14 @@
+﻿@model DateTime?
+<div class="input-group" style="position: relative">
+    @if (Model.HasValue && Model.Value != DateTime.MinValue)
+    {
+        @Html.TextBox("", Model.Value.ToString("MM/dd/yyyy").Replace(".","/"), new { datePicker="true", @class = "form-control" })
+    }
+    else
+    {
+        @Html.TextBox("", string.Empty, new { datePicker="true", @class = "form-control" })
+    }
+    <span class="input-group-addon">
+        <i class="glyphicon glyphicon-calendar"></i>
+    </span>
+</div>

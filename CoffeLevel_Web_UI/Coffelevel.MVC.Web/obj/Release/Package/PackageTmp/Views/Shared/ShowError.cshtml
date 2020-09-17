@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Hata";
+}
+
+@using CoffeLevel.Client.Web.Models
+@model ErrorModel
+
+
+<br />
+
+<div class="alert alert-danger" style="max-width: 650px">@string.Concat(Model.ErrorMessage, " !!!") </div>
+
+@if (Request.UrlReferrer != null)
+{
+    <button onclick="history.go(-1); return false;" type="button" class="btn btn-danger"><< Geri</button>
+}

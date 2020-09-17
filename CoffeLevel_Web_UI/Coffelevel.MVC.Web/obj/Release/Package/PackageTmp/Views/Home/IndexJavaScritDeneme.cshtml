@@ -1,0 +1,63 @@
+﻿@using CoffeLevel.Client.Web.HelperMethods
+@using CoffeLevel.Client.Web.Models
+@using CoffeLevel.Client.Web.Infrastructure
+@using System.Data.Entity.Core.Objects
+
+@model HomeModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<h1>deneme</h1>
+
+
+
+<script type="text/javascript">
+
+    $( function repeatMe() {
+        $.ajax({
+            url: '/Home/CoffeLevelGetir',
+            dataType: 'json',
+            cache: true,
+            timeout: 3000,
+            success: function (data) {
+                $.getJSON("/Home/CoffeLevelGetir", null, function (data) {
+                jQuery.each(data, function (i, eleman) {
+                    $("#Level").append(eleman.coffeeLevel + " " + eleman.coffeeLevelId + "<br>");
+                });
+                setTimeout(repeatMe, 3000);
+
+            });
+            },
+            error: function () {
+                $('#output ul').append('<li>Error');
+                setTimeout(repeatMe, 3000);
+            }
+        });
+    }
+    )
+</script>
+
+<div id="Level"></div>
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+

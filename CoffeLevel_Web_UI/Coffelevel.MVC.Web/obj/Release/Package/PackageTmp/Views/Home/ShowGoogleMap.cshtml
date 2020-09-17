@@ -1,0 +1,30 @@
+﻿@using CoffeLevel.Client.Web.Models
+@using CoffeLevel.Client.Web.HelperMethods
+
+@model MapModel
+
+
+@{
+    ViewBag.Title = "Konumum";
+
+}
+
+<script src="https://maps.googleapis.com/maps/api/js">$(window).load(function () { $("#spinnerLoading").fadeOut(4000); })</script>
+@Scripts.Render("~/bundles/googleapis")
+
+
+
+<div class="page-header row">
+    @Html.Partial("AddPicHeader", new HeaderImageModel { HeaderName = "Konumum" })
+</div>
+
+<div id="spinnerLoading"></div>
+
+<div class="map_container">
+    <div id="map_canvas" class="map_canvas"></div>
+</div>
+
+<br />
+@Html.Partial("BackButtonshow")
+
+

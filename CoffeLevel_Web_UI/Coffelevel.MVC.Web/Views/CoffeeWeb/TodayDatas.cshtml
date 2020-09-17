@@ -1,0 +1,57 @@
+﻿
+
+
+@model CoffeLevel.Client.Web.Models.CoffeeWebModel
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllLevels</title>
+</head>
+<body>
+    @if (Model.coffeeLevelList != null && Model.coffeeLevelList.Count() > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Zaman</th>
+                    <th>Seviye </th>
+                    <th>Sıcaklık </th>
+                    <th>Nem</th>
+                    <th>Ir0</th>
+                    <th>Ir1</th>
+                    <th>Ir2</th>
+                    <th>Ir3</th>
+                    <th>Ir4</th>
+
+                </tr>
+            </thead>
+            @foreach (var item in Model.coffeeLevelList)
+            {
+                <tr>
+                    <td>@item.time</td>
+                    <td>@item.level</td>
+                    <td>@item.temperature</td>
+                    <td>@item.humidity</td>
+                    <td>@item.ir0</td>
+                    <td>@item.ir1</td>
+                    <td>@item.ir2</td>
+                    <td>@item.ir3</td>
+                    <td>@item.ir4</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            Kayıt bulunamadı.
+        </div>
+    }
+</body>
+</html>

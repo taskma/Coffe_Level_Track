@@ -1,0 +1,17 @@
+﻿@using CoffeLevel.Client.Web.Infrastructure
+@model CoffeLevel.Client.Web.Models.HeaderImageModel
+
+
+@{
+    ViewBag.Title = "AddPicHeader";
+    HtmlString htmlStr = new HtmlString(Model.HeaderName);
+}
+
+<div class="col-xs-6 col-md-1">
+        <img src="@Url.Content(RessManager.GetPageResource("HeaderPictureSrc"))" class="img-responsive" alt="Responsive image" />
+</div>
+
+<div class="col-xs-6">
+    <h2>   @htmlStr   </h2>
+
+</div>

@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Coffelevel/Coffelevel.Core/bin/Release
+/Coffelevel/Coffelevel.Core/bin/Debug
+/Coffelevel/Coffelevel.Core/obj/Release/CoffeLevel.Core.csproj.FileListAbsolute.txt
+/Coffelevel/Coffelevel.Core/obj/Release/CoffeLevel.Core.csprojResolveAssemblyReference.cache
+/Coffelevel/Coffelevel.Core/obj/Release/Coffelevel.Core.dll
+/Coffelevel/Coffelevel.Core/obj/Release/Coffelevel.Core.pdb
+/Coffelevel/Coffelevel.Data/bin/Release
+/Coffelevel/Coffelevel.Data/obj/Release
+/Coffelevel/Coffelevel.MVC.Web/App_Data
+/Coffelevel/Coffelevel.MVC.Web/obj/Release/Package/PackageTmp
+/Coffelevel/Coffelevel.MVC.Web/obj/Release/TransformWebConfig/assist
+/Coffelevel/Coffelevel.MVC.Web/obj/Release/TransformWebConfig/original
+/Coffelevel/Coffelevel.MVC.Web/obj/Release/TransformWebConfig/transformed
+/Coffelevel/Coffelevel.MVC.Web/obj/Release/TempPE
+/Coffelevel/.vs/config
+/Coffelevel/Coffelevel.MVC.Web/obj/Debug/TempPE
+/Coffelevel/Coffelevel.MVC.Web/obj/Release
+/Coffelevel/Coffelevel.MVC.Web/obj/Debug/DesignTimeResolveAssemblyReferences.cache

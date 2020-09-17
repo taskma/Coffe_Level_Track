@@ -1,0 +1,10 @@
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\bin\Release\Coffelevel.Data.dll.config
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\bin\Release\Coffelevel.Data.dll
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\bin\Release\Coffelevel.Data.pdb
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\bin\Release\EntityFramework.dll
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\bin\Release\EntityFramework.xml
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\obj\Release\Coffelevel.Data.dll
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\obj\Release\Coffelevel.Data.pdb
+C:\Users\is96309\Source\Repos\CoffeLevelSofttech\Coffelevel\Coffelevel.Data\obj\Release\CoffeLevel.Data.csprojResolveAssemblyReference.cache

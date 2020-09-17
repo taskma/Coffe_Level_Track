@@ -1,0 +1,537 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+}
+
+
+
+@section scripts{
+
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+
+}
+
+<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+
+<script src="~/Content/general/js/Level.js"></script>
+<script src="~/Content/general/js/animationJavaScript.js"></script>
+<script src="~/Content/general/js/animation.js"></script>
+@*@Ajax.ActionLink("Güncelle", "Desired", "Home",
+    new AjaxOptions
+
+    {
+        UpdateTargetId = "coffeeStatus", // <-- DOM element ID to update
+        InsertionMode = InsertionMode.Replace, // <-- Replace the content of DOM element
+        HttpMethod = "GET" // <-- HTTP method
+      
+
+    })*@
+
+
+<script src="~/Content/general/js/animation.js"></script>
+<table>
+    <tr>
+        <td rowspan="4">
+            <div class="animation-container">
+
+                <div class="coffee-bag-container">
+                    <div class="coffee-bag">
+                        <span class="mast"></span>
+                        <span class="bag-top"></span>
+                        <span class="bag-body"></span>
+                        <span class="logo">
+                            <span class="bean bean-one"></span>
+                            <span class="bean bean-two"></span>
+                        </span>
+                        <span class="info info-one"></span>
+                        <span class="info info-two"></span>
+                        <span class="info info-three"></span>
+                        <span class="bag-bottom"></span>
+
+                    </div><!-- ./coffee-bag -->
+                </div><!-- ./coffee-bag-container -->
+                <span class="grounds-container">
+                    <span class="grounds grounds-one"></span>
+                    <span class="grounds grounds-two"></span>
+                    <span class="grounds grounds-three"></span>
+                    <span class="grounds grounds-four"></span>
+                </span>
+
+                <div class="filter"></div><!-- ./filter -->
+                <!-- TODO: create coffee grounds falling from the bag into the filter -->
+
+                <span class="roasting-top"></span>
+
+                <div class="roasting-body">
+                    <span class="handle-container">
+                        <span class="handle-one"></span>
+                        <span class="handle-two"></span>
+                    </span>
+                </div><!-- ./roasting-body -->
+                <!-- the black part between the coffee pot and the filter -->
+
+                <span class="screen"></span>
+
+                <span class="water-attachment"></span>
+
+                <span class="water-lid"></span>
+
+                <span class="water-pot">
+                    <span class="water-pot-gloss"></span>
+                    <span class="fill-line fill-line-first"></span>
+                    <span class="fill-line fill-line-last"></span>
+                    @*<span  class="water"></span>
+                <span class="water1"></span>
+                <span class="water2"></span>
+                <span class="water3"></span>
+                <span class="water4"></span>*@
+
+                    <span id="waterSpan1"></span>
+                    <span id="waterSpan2"></span>
+                    <span id="waterSpan3"></span>
+                    <span id="waterSpan4"></span>
+                    <span id="waterSpan5"></span>
+
+                </span>
+
+                <span class="warmer-plate"></span>
+
+                <span class="warmer">
+                    <span class="warmer-accent accent-one"></span>
+                    <span class="warmer-accent accent-two"></span>
+                    <span class="warmer-accent accent-three"></span>
+                </span>
+
+                <span class="warmer-base"></span>
+
+                <span class="coffee-pot-container">
+
+                    <span class="coffee-pot-top"></span>
+
+                    <span class="coffee-pot-glass-top"></span>
+
+                    <span class="coffee-pot-glass-connector"></span>
+
+                    <span class="coffee-pot-glass-base">
+                        <span class="coffee-pot-gloss"></span>
+                    </span>
+
+                    <span class="coffee-pot-handle-container">
+                        <span class="handle-top"></span>
+                        <span class="handle-bottom"></span>
+                    </span>
+
+                    @*<span class="coffee-drip"></span>
+                <span class="drip-cover"></span>*@
+
+                    <span id="spanDamlama"></span>
+                    <span id="spanDamlama2"></span>
+
+                    @* <span id="span1" class="coffee"></span>*@
+
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+
+                    <span id="span4"></span>
+
+                    <span id="span5"></span>
+
+                    @*<span id="spanSmoke"class="smoke"></span>*@
+                    <span id="spanSmoke"></span>
+                    <span id="spanSmoke2"></span>
+                    <span id="spanSmoke3"></span>
+                    <span id="spanSmoke4"></span>
+
+                </span>
+
+                <span class="coffee-warmer-plate"></span>
+
+                <span class="coffee-base-left-end"></span>
+
+                <span class="coffee-maker-base"></span>
+
+                <span class="control-panel">
+                    <span id="spanRedGreenButton" class="gauge-red"></span>
+                </span>
+
+                <span class="coffee-base-right-end"></span>
+
+                <span class="leg leg-one"></span>
+
+                <span class="leg leg-two"></span>
+
+            </div>
+        </td>
+        <td>
+            <div class="wrapper">
+                <div class="counter col_fourth">
+                    <i class="fa fa-clock-o fa-2x"></i>
+                    <p class="count-text ">Son Güncellenme Saati</p>
+                    @*     <h2 id="sonKayitZaman"class="timer count-title count-number" data-to="300" data-speed="1500"></h2>*@
+                    <h2 id="sonKayitZaman" class="timer count-text-time" data-speed="1500"></h2>
+                    
+                </div>
+            </div>
+
+</td>
+    </tr>
+    <tr>
+        <td>
+            <div class="wrapper">
+                <div class="counter col_fourth">
+                    <i class="fa fa-coffee fa-2x"></i>
+                    <p class="count-text ">Kalan Miktar</p>
+                    <h2  id="remainingLevel" class="timer count-title count-number"  data-speed="1500" ></h2>
+                    <div class="checkBox">
+                        <input id="sec" type="checkbox" value="1" class="checkBox" />  Hazır Olunca Uyar
+                    </div>
+                </div>
+            </div>
+</td>
+</tr>
+    <tr>
+        <td>
+            <div class="wrapper">
+                <div class="counter col_fourth">
+                    <i class="fa fa-lightbulb-o fa-2x"></i>
+                    <p class="count-text "> Yeni istek Sayısı</p>
+                    <h2 class="timer count-text-time count-number" id="numberOfDesire" data-speed="1500"></h2>
+                  
+                </div>
+              @*  @Html.Partial("numberOfDesiredPartialView", )*@
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="wrapper">
+                <div class="counter col_fourth end">
+                    <i class="fa fa-exclamation fa-2x"></i>
+                    <p class="count-text ">Kahve Durumu</p>
+                    <h2 id="coffeeStatus" class="timer count-text-time" data-speed="1500"></h2>
+                    @* <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>*@
+                    <div>
+                        <button type="button" class="letter" id="desiredButon" onClick="desireFunction();">
+                            Tıklayınız
+                        </button>
+                    </div>
+               
+                </div>
+               
+            </div>
+        </td>
+    </tr>
+</table>
+@*<h1 class="copy__title">
+    <strong>Kahven için farklı tarifler dener misin?</strong>
+</h1>
+<div id="sm">
+    <div class="group lever">
+        <button>TarifAl</button>
+    </div>
+    <div class="group">
+        <div class="reel"></div>
+        <div class="reel"></div>
+        <div class="reel"></div>
+    </div>
+    <p class="msg">Şanslı Tarfini Al</p>
+</div>*@
+
+<script type="text/javascript">
+    document.getElementById("desiredButon").onclick = desireFunction;
+  
+    var coffeStatus = document.getElementById("coffeeStatus").innerText;
+    if (coffeStatus != "Kahve yok istekte bulunabilirsin") {
+        document.getElementById('desiredButon').hidden;
+        //$("#sec").addClass("hiddenCheckBox");
+    }
+
+
+    
+
+
+    function desireFunction() {
+      
+        $.ajax({
+        url: '/Home/Desired',
+            type: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                document.getElementById("sec").checked = true;
+                $.getJSON("/Home/Desired", null, function (data) {
+                    $('#numberOfDesire').html(data);
+
+                })
+            }
+        })
+    }
+
+</script>
+
+
+    @*<script type="text/javascript">
+
+        $(document).ready(function () {
+            var bilgiGonder = false;
+            var bilgiGonderInt = 1;
+            var degisken = null;
+            $("#waterSpan1").removeClass("waterA1");
+            $("#waterSpan2").removeClass("waterA2");
+            $("#waterSpan3").removeClass("waterA3");
+            $("#waterSpan4").removeClass("waterA4");
+            $("#waterSpan5").removeClass("waterA5");
+            if ($("#span5").hasClass("coffeeA5"))
+                $("#span5").removeClass("coffeeA5");
+            if ($("#span4").hasClass("coffeeA4"))
+                $("#span4").removeClass("coffeeA4");
+            if ($("#span3").hasClass("coffeeA3"))
+                $("#span3").removeClass("coffeeA3");
+            if ($("#span2").hasClass("coffeeA2"))
+                $("#span2").removeClass("coffeeA2");
+            if ($("#span1").hasClass("coffeeA1"))
+                $("#span1").removeClass("coffeeA1");
+            $(function repeatMe() {
+                $.ajax({
+                    url: '/CoffeeWeb/CoffeLevelGetir',
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        $.getJSON("/CoffeeWeb/CoffeLevelGetir", null, function (data) {
+                            $('#sonKayitZaman').html(data.time);
+                            $('#coffeeStatus').html(data.coffeeStatus);
+                            if (data.level == 5 && data.isCooking)
+                            {
+                                $('#remainingLevel').html("4,5/5");
+                            }
+                            else
+                            {
+                                $('#remainingLevel').html(data.level + "/5");
+                            }
+
+
+
+                            if (bilgiGonder) {
+                                //    jQuery.each(data, function (i, eleman) {
+                                //  $("#LevelId").css({ 'font-size': '80px' });
+
+                             //   $('#LevelId').html(data.level + ". seviyede şu anda. ");
+                                //var element = document.getElementById("span1");
+                                //window.alert(data.level);
+                                if (data.isCooking) {
+
+                                    $("#spanSmoke").addClass("smoke");
+                                    $("#spanDamlama").addClass("coffee-drip");
+                                    $("#spanDamlama2").addClass("drip-cover");
+
+                                    switch (data.level) {
+                                        case 0:
+                                            $("#waterSpan1").addClass("waterA1");
+                                            $("#waterSpan2").addClass("waterA2");
+                                            $("#waterSpan3").addClass("waterA3");
+                                            $("#waterSpan4").addClass("waterA4");
+                                            $("#waterSpan5").addClass("waterA5");
+                                            break;
+                                        case 1:
+                                            if (!$("#span1").hasClass("coffeeA1")) {
+                                                $("#span1").addClass("coffeeA1");
+                                            }
+                                            $("#waterSpan1").addClass("waterA1");
+                                            $("#waterSpan2").addClass("waterA2");
+                                            $("#waterSpan3").addClass("waterA3");
+                                            $("#waterSpan4").addClass("waterA4");
+                                            if ($("#waterSpan5").hasClass("waterA5"))
+                                                $("#waterSpan5").removeClass("waterA5");
+                                            break;
+                                        case 2:
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+                                            if (!$("#span2").hasClass("coffeeA2"))
+                                                $("#span2").addClass("coffeeA2");
+                                            $("#waterSpan1").addClass("waterA1");
+                                            $("#waterSpan2").addClass("waterA2");
+                                            $("#waterSpan3").addClass("waterA3");
+                                            $("#waterSpan4").removeClass("waterA4");
+                                            $("#waterSpan5").removeClass("waterA5");
+                                            break;
+                                        case 3:
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+                                            if (!$("#span2").hasClass("coffeeA2"))
+                                                $("#span2").addClass("coffeeA2");
+                                            if (!$("#span3").hasClass("coffeeA3"))
+                                                $("#span3").addClass("coffeeA3");
+                                            $("#waterSpan1").addClass("waterA1");
+                                            $("#waterSpan2").addClass("waterA2");
+                                            $("#waterSpan3").removeClass("waterA3");
+                                            $("#waterSpan4").removeClass("waterA4");
+                                            $("#waterSpan5").removeClass("waterA5");
+                                            break;
+                                        case 4:
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+                                            if (!$("#span2").hasClass("coffeeA2"))
+                                                $("#span2").addClass("coffeeA2");
+                                            if (!$("#span3").hasClass("coffeeA3"))
+                                                $("#span3").addClass("coffeeA3");
+                                            if (!$("#span4").hasClass("coffeeA4"))
+                                                $("#span4").addClass("coffeeA4");
+                                            $("#waterSpan1").addClass("waterA1");
+                                            $("#waterSpan2").removeClass("waterA2");
+                                            $("#waterSpan3").removeClass("waterA3");
+                                            $("#waterSpan4").removeClass("waterA4");
+                                            $("#waterSpan5").removeClass("waterA5");
+                                            break;
+                                        case 5:
+                                            window.clearInterval(degisken);
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+                                            if (!$("#span2").hasClass("coffeeA2"))
+                                                $("#span2").addClass("coffeeA2");
+                                            if (!$("#span3").hasClass("coffeeA3"))
+                                                $("#span3").addClass("coffeeA3");
+                                            if (!$("#span4").hasClass("coffeeA4"))
+                                                $("#span4").addClass("coffeeA4");
+                                            if (!$("#span5").hasClass("coffeeA5"))
+                                                $("#span5").addClass("coffeeA5");
+                                            $("#waterSpan1").removeClass("waterA1");
+                                            $("#waterSpan2").removeClass("waterA2");
+                                            $("#waterSpan3").removeClass("waterA3");
+                                            $("#waterSpan4").removeClass("waterA4");
+                                            $("#waterSpan5").removeClass("waterA5");
+
+                                           degisken = setInterval(function yanipSon() {
+
+                                                if ($("#span5").css("visibility") == "visible")
+                                                {
+                                                    $("#span5").css("visibility", "hidden");
+                                                }
+                                                else
+                                                {
+                                                    $("#span5").css("visibility", "visible");
+                                                }
+                                             },700);
+
+                                            break;
+                                    }
+                                }
+                                else {
+                                    $("#spanSmoke").removeClass("smoke");
+                                    $("#spanDamlama").removeClass("coffee-drip");
+                                    $("#spanDamlama2").removeClass("drip-cover");
+                                    if ($("#waterSpan1").hasClass("waterA1"))
+                                        $("#waterSpan1").removeClass("waterA1");
+                                    if ($("#waterSpan2").hasClass("waterA2"))
+                                        $("#waterSpan2").removeClass("waterA2");
+                                    if ($("#waterSpan3").hasClass("waterA3"))
+                                        $("#waterSpan3").removeClass("waterA3");
+                                    if ($("#waterSpan4").hasClass("waterA4"))
+                                        $("#waterSpan4").removeClass("waterA4");
+                                    if ($("#waterSpan5").hasClass("waterA5"))
+                                        $("#waterSpan5").removeClass("waterA5");
+                                    switch (data.level) {
+                                        case 5:
+                                            if (!$("#span5").hasClass("coffeeA5"))
+                                                $("#span5").addClass("coffeeA5");
+                                            if (!$("#span4").hasClass("coffeeA4"))
+                                                $("#span4").addClass("coffeeA4");
+                                            if (!$("#span3").hasClass("coffeeA3"))
+                                                $("#span3").addClass("coffeeA3");
+                                            if (!$("#span2").hasClass("coffeeA2"))
+                                                $("#span2").addClass("coffeeA2");
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+
+                                            break;
+                                        case 4:
+                                            if ($("#span5").hasClass("coffeeA5"))
+                                                $("#span5").removeClass("coffeeA5");
+                                            if (!$("#span4").hasClass("coffeeA4"))
+                                                $("#span4").addClass("coffeeA4");
+                                            if (!$("#span3").hasClass("coffeeA3"))
+                                                $("#span3").addClass("coffeeA3");
+                                            if (!$("#span2").hasClass("coffeeA2"))
+                                                $("#span2").addClass("coffeeA2");
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+                                            break;
+                                        case 3:
+                                            if ($("#span5").hasClass("coffeeA5"))
+                                                $("#span5").removeClass("coffeeA5");
+                                            if ($("#span4").hasClass("coffeeA4"))
+                                                $("#span4").removeClass("coffeeA4");
+                                            if (!$("#span3").hasClass("coffeeA3"))
+                                                $("#span3").addClass("coffeeA3");
+                                            if (!$("#span2").hasClass("coffeeA2"))
+                                                $("#span2").addClass("coffeeA2");
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+                                            break;
+                                        case 2:
+                                            if ($("#span5").hasClass("coffeeA5"))
+                                                $("#span5").removeClass("coffeeA5");
+                                            if ($("#span4").hasClass("coffeeA4"))
+                                                $("#span4").removeClass("coffeeA4");
+                                            if ($("#span3").hasClass("coffeeA3"))
+                                                $("#span3").removeClass("coffeeA3");
+                                            if (!$("#span2").hasClass("coffeeA2"))
+                                                $("#span2").addClass("coffeeA2");
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+                                            break;
+                                        case 1:
+                                            if ($("#span5").hasClass("coffeeA5"))
+                                                $("#span5").removeClass("coffeeA5");
+                                            if ($("#span4").hasClass("coffeeA4"))
+                                                $("#span4").removeClass("coffeeA4");
+                                            if ($("#span3").hasClass("coffeeA3"))
+                                                $("#span3").removeClass("coffeeA3");
+                                            if ($("#span2").hasClass("coffeeA2"))
+                                                $("#span2").removeClass("coffeeA2");
+                                            if (!$("#span1").hasClass("coffeeA1"))
+                                                $("#span1").addClass("coffeeA1");
+                                            break;
+                                        case 0:
+                                            if ($("#span5").hasClass("coffeeA5"))
+                                                $("#span5").removeClass("coffeeA5");
+                                            if ($("#span4").hasClass("coffeeA4"))
+                                                $("#span4").removeClass("coffeeA4");
+                                            if ($("#span3").hasClass("coffeeA3"))
+                                                $("#span3").removeClass("coffeeA3");
+                                            if ($("#span2").hasClass("coffeeA2"))
+                                                $("#span2").removeClass("coffeeA2");
+                                            if ($("#span1").hasClass("coffeeA1"))
+                                                $("#span1").removeClass("coffeeA1");
+                                            break;
+                                    }
+                                }
+                            }
+                        }
+                            );
+                        setTimeout(repeatMe, 8000);
+                        if (bilgiGonderInt == 1)
+                        {
+                            bilgiGonderInt = 2;
+                        }
+                        else
+                        {
+                            bilgiGonder = true;
+                        }
+
+
+
+                        //});
+                    },
+                    error: function () {
+                        setTimeout(repeatMe, 8000);
+                    }
+                });
+            }
+            )
+        })
+
+    </script>*@
+
+
+

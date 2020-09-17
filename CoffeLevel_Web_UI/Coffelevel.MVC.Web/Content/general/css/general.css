@@ -1,0 +1,141 @@
+﻿#spinnerLoading {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url() 50% 50% no-repeat #ede9df;
+    background-image: url('/Content/image/loading45.gif');
+}
+#spinnerLoadingWithoutBackground {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url() 50% 50% no-repeat;
+    background-image: url('/Content/image/loading45.gif');
+}
+.map_container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+}
+.map_container .map_canvas{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+.basket-badge {
+    font-size: 18px; 
+    background-color: #428BCA
+}
+.count-badge-green {
+    font-size: 13px; 
+    background-color: #5cb85c 
+}
+.count-badge-yellow {
+    font-size: 13px; 
+    background-color: #e38d13 
+}
+.count-badge-cyan {
+    font-size: 13px; 
+    background-color: #5bc0de 
+}
+.order-badge-blue {
+    font-size: 16px; 
+    background-color: #428BCA
+}
+.order-badge-green {
+    font-size: 16px; 
+    background-color: #5cb85c 
+}
+
+.text-red{
+    color: red;
+}
+.text-black{
+    color: black;
+}
+.text-green{
+    color: green;
+
+}
+.text-blue{
+    color: blue;
+
+}
+.no-padding {
+    padding: 0 !important;
+}
+.min-text-width {
+    min-width: 50px;
+}
+
+
+.progress-striped-myimage {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) !important;
+    background-size: 40px 40px;
+    background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .15) 25%,transparent 25%,transparent 50%,rgba(255, 255, 255, .15) 50%,rgba(255, 255, 255, .15) 75%,transparent 75%,transparent)
+}
+
+.progress{
+    margin-bottom: 5px !important;
+}
+.smallGreyText
+{
+    color: darkgray;
+    font-size: 11px;
+}
+.smallRedText
+{
+    color: #cf2b2b;
+    font-size: 10px;
+}
+.mySignature
+{
+    text-shadow: 0 1px #fff;
+    font-size: 12px;
+    font-family: 'Inder', Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    text-align:center;
+    color:#a9b0af;
+    font-style:italic;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.pagination > .pageActiveNumber > a,
+.pagination > .pageActiveNumber > span,
+.pagination > .pageActiveNumber > a:hover,
+.pagination > .pageActiveNumber > span:hover,
+.pagination > .pageActiveNumber > a:focus,
+.pagination > .pageActiveNumber > span:focus {
+  z-index: 2;
+  color: #ffffff;
+  cursor: default;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
+.blink {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

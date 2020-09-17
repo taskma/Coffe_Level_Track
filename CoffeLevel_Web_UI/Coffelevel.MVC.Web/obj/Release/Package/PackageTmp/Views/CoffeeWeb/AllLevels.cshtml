@@ -1,0 +1,51 @@
+﻿
+
+
+@model CoffeLevel.Client.Web.Models.CoffeeWebModel
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TodayLevels</title>
+</head>
+<body>
+    @if (Model.coffeeCalcLevelList != null && Model.coffeeCalcLevelList.Count() > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Zaman</th>
+                    <th>Seviye </th>
+                    <th>Pişiyor mu? </th>
+                    <th>Pot yerinde mi?</th>
+                    <th>Makina çalışıyor mu?</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.coffeeCalcLevelList)
+            {
+                string TrClass = (item.level == 5 && !item.isCooking) ? "success" : !item.hasPot ? "danger" : "";
+
+                <tr class="@TrClass">
+
+                    <td>@item.time</td>
+                    <td>@item.level</td>
+                    <td>@item.isCooking</td>
+                    <td>@item.hasPot</td>
+                    <td>@item.isOpen</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            Kayıt bulunamadı.
+        </div>
+    }
+</body>
+</html>
