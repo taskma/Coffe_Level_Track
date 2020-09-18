@@ -3,7 +3,7 @@
 You can track your coffe level in your coffe machine on web with animations
 
 * .NET C# MVC Web UI
-* Arduino + Infrared sensor measurement
+* Arduino + Infrared 5 channel sensor measurement
 
 ![alt text](https://github.com/taskma/Coffe_Level_Track/blob/master/coffelevel.PNG)
 
