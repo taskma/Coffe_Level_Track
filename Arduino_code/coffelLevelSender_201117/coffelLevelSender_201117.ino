@@ -8,6 +8,15 @@
   - Sends telemetry to an HTTP endpoint over Ethernet (DHCP)
   - Parses a simple server response format and shows 2 lines on an I2C LCD
 
+  Improvements vs original:
+  - Removed interrupt-based LCD update (calling Serial/I2C from timer ISR is unsafe)
+  - Made timing explicit with millis() (non-blocking loop; no long delay chains)
+  - Avoided heavy String concatenation for requests/response parsing where feasible
+  - Fixed response parsing bug (was mixing serverResponse/response variables)
+  - Replaced custom float validation with isnan/isfinite
+  - Centralized configuration and separated concerns into small functions
+*/
+
 #include <SPI.h>
 #include <Ethernet.h>
 #include <LiquidCrystal_I2C_AvrI2C.h>
