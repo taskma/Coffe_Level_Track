@@ -1,5 +1,5 @@
 /*
-  Coffee Level Tracker (Refactor)
+  Coffee Level Tracker 
   -------------------------------
   What it does:
   - Reads a force sensor (FSR) as a proxy for "coffee level" (analog A0)
@@ -418,4 +418,5 @@ void loop() {
   // 4) Keep Ethernet stack alive on some boards/shields
   Ethernet.maintain();
 }
+
 
